@@ -1,27 +1,9 @@
 import { useState } from "react";
+import { Globe } from "lucide-react";
 import Badge from "../../../components/ui/Badge";
 import Card from "../../../components/ui/Card";
 import ScoreRing from "./ScoreRing";
 import { formatDateTime, formatDurationMs } from "../../../utils/format";
-
-function GlobeIcon({ className = "" }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18" />
-      <path d="M12 3c2.75 3 4.25 6 4.25 9s-1.5 6-4.25 9c-2.75-3-4.25-6-4.25-9S9.25 6 12 3z" />
-    </svg>
-  );
-}
 
 function SiteIcon({ src }) {
   const [failed, setFailed] = useState(false);
@@ -29,7 +11,7 @@ function SiteIcon({ src }) {
   if (!src || failed) {
     return (
       <div className="w-12 h-12 rounded-lg border border-slate-200 bg-slate-50 grid place-items-center text-slate-500">
-        <GlobeIcon className="w-6 h-6" />
+        <Globe className="w-6 h-6" strokeWidth={1.8} />
       </div>
     );
   }

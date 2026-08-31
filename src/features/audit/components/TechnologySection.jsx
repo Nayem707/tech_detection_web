@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Puzzle } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import Badge from "../../../components/ui/Badge";
 import EmptyState from "../../../components/feedback/EmptyState";
@@ -168,7 +169,7 @@ export default function TechnologySection({ technologies = [] }) {
     return (
       <Card title="Technology Stack">
         <EmptyState
-          icon="🧩"
+          icon={Puzzle}
           title="No technologies detected"
           description="Heuristic fingerprints did not find a confident match on this page."
         />

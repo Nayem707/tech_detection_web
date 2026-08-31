@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { CheckCircle2 } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import Badge from "../../../components/ui/Badge";
 import EmptyState from "../../../components/feedback/EmptyState";
@@ -105,7 +106,7 @@ export default function IssuesSection({ audit }) {
 
       {filtered.length === 0 ? (
         <EmptyState
-          icon="✅"
+          icon={CheckCircle2}
           title="No issues found"
           description="Nothing to fix under the current filters."
         />

@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 import {
+  AlertTriangle,
+  ArrowRight,
+  FileText,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
+import {
   useListAuditsQuery,
   useDeleteAuditMutation,
 } from "../../features/audit/auditApi";
@@ -34,12 +41,15 @@ export default function AuditHistoryPage() {
     return (
       <Card>
         <EmptyState
-          icon="⚠️"
+          icon={AlertTriangle}
           title="Could not load audit history"
           description="Please check that the API server is reachable."
           action={
             <button className="btn btn-primary" onClick={refetch}>
-              Retry
+              <span className="flex items-center gap-2">
+                <RefreshCw className="h-4 w-4" strokeWidth={2} />
+                Retry
+              </span>
             </button>
           }
         />
@@ -53,12 +63,15 @@ export default function AuditHistoryPage() {
     return (
       <Card>
         <EmptyState
-          icon="📄"
+          icon={FileText}
           title="No audits yet"
           description="Run your first audit and it will appear here."
           action={
             <Link to="/" className="btn btn-primary">
-              Run an audit
+              <span className="flex items-center gap-2">
+                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+                Run an audit
+              </span>
             </Link>
           }
         />
@@ -138,10 +151,11 @@ export default function AuditHistoryPage() {
                 <td className="py-3 pr-4 text-right">
                   <button
                     type="button"
-                    className="text-xs text-rose-600 hover:underline disabled:opacity-50"
+                    className="inline-flex items-center gap-1.5 text-xs text-rose-600 hover:underline disabled:opacity-50"
                     onClick={() => handleDelete(a.id)}
                     disabled={isDeleting}
                   >
+                    <Trash2 className="h-3.5 w-3.5" strokeWidth={2} />
                     Delete
                   </button>
                 </td>

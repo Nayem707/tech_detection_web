@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Globe, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useCreateAuditMutation } from "../auditApi";
@@ -59,8 +60,9 @@ export default function AuditForm() {
     <form onSubmit={handleSubmit} className="w-full">
       <label
         htmlFor="url"
-        className="block text-sm font-medium text-slate-700 mb-2"
+        className="flex items-center gap-2 text-sm font-medium text-slate-700 mb-2"
       >
+        <Globe className="h-4 w-4" strokeWidth={2} />
         Website URL
       </label>
       <div className="flex flex-col md:flex-row gap-3">
@@ -84,7 +86,10 @@ export default function AuditForm() {
           className="btn btn-primary md:w-56"
           disabled={isLoading}
         >
-          {isLoading ? "Analyzing…" : "Analyze Website"}
+          <span className="flex items-center justify-center gap-2">
+            <Search className="h-4 w-4" strokeWidth={2} />
+            {isLoading ? "Analyzing…" : "Analyze Website"}
+          </span>
         </button>
       </div>
 
