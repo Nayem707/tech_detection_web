@@ -1,3 +1,4 @@
+import { Activity } from "lucide-react";
 import { useSelector } from "react-redux";
 import { selectSubmittedUrl } from "../auditSelectors";
 
@@ -15,7 +16,8 @@ export default function AuditProgress() {
   const url = useSelector(selectSubmittedUrl);
   return (
     <div className="card p-8 max-w-xl mx-auto">
-      <h2 className="text-lg font-semibold text-slate-900">
+      <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+        <Activity className="h-5 w-5" strokeWidth={2} />
         Analyzing website…
       </h2>
       {url && <p className="text-sm text-slate-500 mt-1 truncate">{url}</p>}

@@ -1,3 +1,4 @@
+import { Accessibility } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import Badge from "../../../components/ui/Badge";
 
@@ -22,7 +23,12 @@ export default function AccessibilitySection({ accessibility }) {
 
   return (
     <Card
-      title="Accessibility"
+      title={
+        <span className="flex items-center gap-2">
+          <Accessibility className="h-4 w-4" strokeWidth={2} />
+          Accessibility
+        </span>
+      }
       description="Automated heuristics. Not a substitute for a full WCAG audit."
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

@@ -1,3 +1,4 @@
+import { Search } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import Badge from "../../../components/ui/Badge";
 
@@ -20,7 +21,12 @@ export default function SeoSection({ seo }) {
 
   return (
     <Card
-      title="SEO"
+      title={
+        <span className="flex items-center gap-2">
+          <Search className="h-4 w-4" strokeWidth={2} />
+          SEO
+        </span>
+      }
       description="Structured metadata and page content signals."
     >
       <div className="grid md:grid-cols-2 gap-6">

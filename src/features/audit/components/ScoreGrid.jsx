@@ -1,3 +1,4 @@
+import { BarChart3 } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import ScoreRing from "./ScoreRing";
 
@@ -12,7 +13,12 @@ const CATEGORIES = [
 export default function ScoreGrid({ scores }) {
   return (
     <Card
-      title="Scores"
+      title={
+        <span className="flex items-center gap-2">
+          <BarChart3 className="h-4 w-4" strokeWidth={2} />
+          Scores
+        </span>
+      }
       description="Weighted category scores make up the overall score."
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 place-items-center">

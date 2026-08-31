@@ -1,3 +1,4 @@
+import { Gauge } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import { formatBytes, formatDurationMs } from "../../../utils/format";
 
@@ -32,7 +33,12 @@ export default function PerformanceSection({ performance }) {
 
   return (
     <Card
-      title="Performance"
+      title={
+        <span className="flex items-center gap-2">
+          <Gauge className="h-4 w-4" strokeWidth={2} />
+          Performance
+        </span>
+      }
       description="Static HTTP measurements — deep browser metrics (LCP/FCP/CLS) will be added in Phase 3."
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

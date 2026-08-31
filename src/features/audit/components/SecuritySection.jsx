@@ -1,3 +1,4 @@
+import { ShieldCheck } from "lucide-react";
 import Card from "../../../components/ui/Card";
 import Badge from "../../../components/ui/Badge";
 
@@ -13,7 +14,12 @@ export default function SecuritySection({ security }) {
 
   return (
     <Card
-      title="Security"
+      title={
+        <span className="flex items-center gap-2">
+          <ShieldCheck className="h-4 w-4" strokeWidth={2} />
+          Security
+        </span>
+      }
       description="Passive checks against transport, headers, and cookies."
     >
       <div className="grid md:grid-cols-2 gap-6">
